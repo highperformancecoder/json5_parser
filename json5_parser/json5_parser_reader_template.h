@@ -13,7 +13,10 @@
 #include "json5_parser_value.h"
 #include "json5_parser_error_position.h"
 
+// emscripten threads are complicated to use and experimental
+#ifndef __EMSCRIPTEN__
 #define BOOST_SPIRIT_THREADSAFE  // uncomment for multithreaded use, requires linking to boost.thread
+#endif
 
 #include <boost/bind/bind.hpp>
 #include <boost/function.hpp>
